@@ -5,7 +5,10 @@ using UnityEngine.AI;
 
 public class BossController : MonoBehaviour
 {
+    public float HealthBoss = 100f;
+   
 
+    //aca se crea todo el sistema de navmesh y maquina de estado
     NavMeshAgent agent;
     public Transform player;
     State actualState;
@@ -25,6 +28,11 @@ public class BossController : MonoBehaviour
     void Update()
     {
         actualState = actualState.Process();
+    }
+    public void Hit()
+    {
+        HealthBoss = HealthBoss - 1;
+        if (HealthBoss == 0) Destroy(gameObject);
     }
 
 }

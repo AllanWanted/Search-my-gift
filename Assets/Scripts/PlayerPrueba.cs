@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class PlayerPrueba : MonoBehaviour
 {
+
+    public float Health = 100f;
     Rigidbody rig;
     public float speed = 1;
     public float jumpForce = 1;
@@ -17,6 +19,11 @@ public class PlayerPrueba : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (Input.GetMouseButtonDown(0))
+        {
+            Shoot();
+        }
+        
         float vertical = Input.GetAxis("Vertical");
         float horizontal = Input.GetAxis("Horizontal");
 
@@ -28,6 +35,14 @@ public class PlayerPrueba : MonoBehaviour
 
         }
     }
-
+    public void Hit()
+    {
+        Health = Health - 1;
+        if (Health == 0) Destroy(gameObject);
+    }
+    void Shoot()
+    {
+        
+    }
 
 }
