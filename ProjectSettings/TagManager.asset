@@ -5,8 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - Snowball
-  - SpiderEnemy
   - Spider
+  - Monster
   layers:
   - Default
   - TransparentFX

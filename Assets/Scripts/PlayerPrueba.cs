@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerPrueba : MonoBehaviour
 {
@@ -11,16 +12,18 @@ public class PlayerPrueba : MonoBehaviour
     public float speed = 1;
     public float jumpForce = 1;
 
+
     // Start is called before the first frame update
     void Start()
-    {
+    {   
+        
         rig = GetComponent<Rigidbody>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+         if (Input.GetMouseButtonDown(0))
         {
             Shoot();
         }
@@ -35,11 +38,25 @@ public class PlayerPrueba : MonoBehaviour
             rig.velocity = new Vector3(rig.velocity.x, rig.velocity.y + jumpForce, rig.velocity.z);
 
         }
+
+        
     }
     public void Hit()
     {   
         Health = Health - 1;
         if (Health == 0) Destroy(gameObject);
+    }
+    public void HitSpider()
+    {
+        Health = Health - 3;
+        if (Health == 0) Destroy(gameObject);
+       
+    }
+    public void HitMonster()
+    {
+        Health = Health - 1;
+        if (Health == 0) Destroy(gameObject);
+
     }
     void Shoot()
     {   
@@ -53,8 +70,13 @@ public class PlayerPrueba : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Spider"))
         {
-            Hit();
+            HitSpider();
+        }
+        else if (collision.gameObject.CompareTag("Monster"))
+        {
+            HitMonster();
         }
     }
+   
 
 }

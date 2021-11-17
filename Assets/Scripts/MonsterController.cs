@@ -29,4 +29,5 @@ public class MonsterController : MonoBehaviour
         rb.velocity = transform.forward * speed + Vector3.down * rb.velocity.y;
     }
     
+
 }
