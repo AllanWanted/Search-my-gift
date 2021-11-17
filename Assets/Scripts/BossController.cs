@@ -18,7 +18,8 @@ public class BossController : MonoBehaviour
 
     // Start is called before the first frame update
     void Start()
-    {
+    {   
+        
         agent = GetComponent<NavMeshAgent>();
         anim = GetComponent<Animator>();
         actualState = new Idle(gameObject, agent, player, anim);

@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class PlayerPrueba : MonoBehaviour
 {
-
+    public float gunSpeed = 1;
+    public GameObject SnowBall;
     public float Health = 100f;
     Rigidbody rig;
     public float speed = 1;
@@ -36,13 +37,20 @@ public class PlayerPrueba : MonoBehaviour
         }
     }
     public void Hit()
-    {
+    {   
         Health = Health - 1;
         if (Health == 0) Destroy(gameObject);
     }
     void Shoot()
-    {
-        
-    }
+    {   
+        GameObject newSnowball = Instantiate(SnowBall, transform.position + transform.forward, new Quaternion(0, 0, 0, 0));
+        Rigidbody snowballRig = newSnowball.transform.GetComponent<Rigidbody>();
+        snowballRig.velocity = transform.forward * gunSpeed;
 
+        Destroy(newSnowball, 5);
+    }
+    private void OnCollisionEnter(Collision collision)
+    {
+        BossController bossController = collision.GetComponent
+    }
 }

@@ -436,6 +436,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d5a97cba36c63e49af8a31f5b85fe71, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  HealthBoss: 100
   player: {fileID: 1860507671}
 --- !u!1 &657502513
 GameObject:
@@ -929,6 +930,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4eedb4cc37fa54408fafab073287e3d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gunSpeed: 5
+  SnowBall: {fileID: 3094770173496320377, guid: 64b787f0e4754dc42a12a432512753bd, type: 3}
+  Health: 100
   speed: 5
   jumpForce: 5
 --- !u!54 &1860507667
