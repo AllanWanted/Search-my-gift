@@ -51,6 +51,10 @@ public class PlayerPrueba : MonoBehaviour
     }
     private void OnCollisionEnter(Collision collision)
     {
-        BossController bossController = collision.GetComponent
+        if (collision.gameObject.CompareTag("Spider"))
+        {
+            Hit();
+        }
     }
+
 }

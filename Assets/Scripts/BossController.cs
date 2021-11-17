@@ -35,5 +35,13 @@ public class BossController : MonoBehaviour
         HealthBoss = HealthBoss - 1;
         if (HealthBoss == 0) Destroy(gameObject);
     }
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Snowball"))
+        {
+            Hit();
+            Destroy(collision.gameObject);
+        }
+    }
 
 }

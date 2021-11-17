@@ -15,11 +15,6 @@ public class SpiderController : MonoBehaviour
     {
 
     }
-    void OnCollisionEnter(Collision collision)
-    {
-        if (collision.gameObject.tag == "Player")
-        {
-            collision.gameObject.SetActive(false);
-        }
-    }
+    
+    
 }
