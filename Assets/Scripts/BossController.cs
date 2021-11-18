@@ -13,6 +13,7 @@ public class BossController : MonoBehaviour
     public Transform player;
     State actualState;
     Animator anim;
+    public float speed = 1;
 
 
 
@@ -37,11 +38,7 @@ public class BossController : MonoBehaviour
     }
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.CompareTag("Snowball"))
-        {
-            Hit();
-            Destroy(collision.gameObject);
-        }
+        
     }
 
 }

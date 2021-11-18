@@ -58,6 +58,11 @@ public class PlayerPrueba : MonoBehaviour
         if (Health == 0) Destroy(gameObject);
 
     }
+    public void HitArms()
+    {
+        Health = Health - 1;
+        if (Health == 0) Destroy(gameObject);
+    }
     void Shoot()
     {   
         GameObject newSnowball = Instantiate(SnowBall, transform.position + transform.forward, new Quaternion(0, 0, 0, 0));
@@ -75,6 +80,10 @@ public class PlayerPrueba : MonoBehaviour
         else if (collision.gameObject.CompareTag("Monster"))
         {
             HitMonster();
+        }
+        else if (collision.gameObject.CompareTag("Arms"))
+        {
+            HitArms();
         }
     }
    
