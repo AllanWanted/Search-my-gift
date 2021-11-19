@@ -5,7 +5,7 @@ using UnityEngine;
 /// <summary>
 /// Simple class that controls an Agent in a circular patrol circuit
 /// </summary>
-[RequireComponent(typeof(MonsterController))]
+
 public class RealPatrol : MonoBehaviour
 {
     /// <summary>
