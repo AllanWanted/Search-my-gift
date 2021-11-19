@@ -6,4 +6,4 @@ interface IBox
 public enum BoxID
 {
     HEALT = 0,
-}
+};
