@@ -86,6 +86,19 @@ public class PlayerPrueba : MonoBehaviour
             HitArms();
         }
     }
-   
+    private void OntriggerEnter(Collider other)
+    {
+        IBox box = other.GetComponent<IBox>();
+        if(box != null)
+        {
+            int res = box.OpenBox();
+            if(box.getID() == (int)BoxID.HEALT)
+            {
+                Health += res;
+
+            }
+        }
+    }
+
 
 }
