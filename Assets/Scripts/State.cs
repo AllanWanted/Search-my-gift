@@ -8,7 +8,7 @@ public class State
     // 'States' that the NPC could be in.
     public enum STATE
     {
-        IDLE, PATROL, PURSUE, ATTACK, SLEEP, RUNAWAY
+        IDLE, PATROL, PURSUE, ATTACK, DIE
     };
 
     // 'Events' - where we are in the running of a STATE.
@@ -101,7 +101,7 @@ public class Perseguir : State
 
     public override void Enter()
     {
-        //anim.SetFloat("Speed", 1);
+        anim.SetBool("Corriendo", true);
         base.Enter(); // Sets stage to UPDATE.
     }
 
@@ -115,27 +115,28 @@ public class Perseguir : State
             nextState = new Idle(npc, agent, player, anim);
             stage = EVENT.EXIT;
         }
-        /*
+        
         if (Vector3.Distance(player.position, npc.transform.position) < 10)
         {
             nextState = new Attack(npc, agent, player, anim);
             stage = EVENT.EXIT;
-        }*/
+        }
 
 
     }
 
     public override void Exit()
     {
+        anim.SetBool("Corriendo", false);
         base.Exit();
     }
 
 }
 
-    /*
+    
     public class Attack : State
     {
-        float wakeUpDistance = 25;
+        float wakeUpDistance = 10;
 
         public Attack(GameObject _npc, NavMeshAgent _agent, Transform _player, Animator _anim)
                     : base(_npc, _agent, _player, _anim)
@@ -146,7 +147,7 @@ public class Perseguir : State
 
         public override void Enter()
         {
-            anim.SetFloat("Speed", 1);
+            
             base.Enter(); // Sets stage to UPDATE.
             anim.SetBool("Atacando", true);
         }
@@ -157,8 +158,8 @@ public class Perseguir : State
 
             if (Vector3.Distance(player.position, npc.transform.position) > wakeUpDistance)
             {
-                agent.SetDestination(npc.transform.position);
-                nextState = new Idle(npc, agent, player, anim);
+                
+                nextState = new Perseguir(npc, agent, player, anim);
                 stage = EVENT.EXIT;
 
             }
@@ -167,11 +168,53 @@ public class Perseguir : State
 
         public override void Exit()
         {
+           
             anim.SetBool("Atacando", false);
             base.Exit();
 
         }
     }
-}*/
+    public class DIE : State
+    {
+      float wakeUpDistance = 10;
+
+    public DIE(GameObject _npc, NavMeshAgent _agent, Transform _player, Animator _anim)
+                : base(_npc, _agent, _player, _anim)
+    {
+        name = STATE.DIE; // Set name of current state.
+        
+    }
+
+    public override void Enter()
+    {
+        anim.SetFloat("Speed", 1);
+        base.Enter(); // Sets stage to UPDATE.
+        anim.SetBool("Atacando", true);
+        anim.SetBool("corriendo", true);
+    }
+
+    public override void Update()
+    {
+        agent.SetDestination(player.position);
+
+        if (Vector3.Distance(player.position, npc.transform.position) > wakeUpDistance)
+        {
+
+            nextState = new DIE(npc, agent, player, anim);
+            stage = EVENT.EXIT;
+
+        }
+
+    }
+
+    public override void Exit()
+    {
+        anim.SetBool("Corriendo", false);
+        anim.SetBool("Atacando", false);
+        base.Exit();
+
+    }
+}
+
 
 

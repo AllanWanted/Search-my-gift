@@ -58,6 +58,7 @@ public class PlayerPrueba : MonoBehaviour
         if (Health == 0) Destroy(gameObject);
 
     }
+    
     void Shoot()
     {   
         GameObject newSnowball = Instantiate(SnowBall, transform.position + transform.forward, new Quaternion(0, 0, 0, 0));
@@ -76,7 +77,24 @@ public class PlayerPrueba : MonoBehaviour
         {
             HitMonster();
         }
+       
     }
-   
+    void OnTriggerEnter(Collider other)
+    {
+        IBox box = other.GetComponent<IBox>();
+        if (box != null)
+        {
+            int res = box.OpenBox();
+            if (box.getID() == (int)BoxID.HEALT)
+            {
+                Health += res;
+               
+            }
+            Destroy(other.gameObject);
+        }
+
+
+    }
+
 
 }
