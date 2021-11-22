@@ -40250,6 +40250,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 470166, guid: 25ce4f8573beb9a479a78cae763615ca, type: 3}
   m_PrefabInstance: {fileID: 628367400}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< HEAD:Assets/Scenes/SampleScene.unity
+  m_GameObject: {fileID: 963194225}
+  m_LocalRotation: {x: -0, y: -0.04991913, z: -0, w: 0.9987533}
+  m_LocalPosition: {x: 0.34000024, y: 0.86, z: -3.3000007}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1860507671}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: -5.723, z: 0}
+--- !u!1 &1304075121
+=======
 --- !u!4 &2102743043 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 459376, guid: 3cde6b8d4b8f4c946857c4628c10d665, type: 3}
@@ -40261,6 +40272,7 @@ Transform:
   m_PrefabInstance: {fileID: 424324157}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &2106589980
+>>>>>>> e9ec5cbcba55a52d2c5da3452822848c0c6d98d5:Assets/Scenes/Allan.unity
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
