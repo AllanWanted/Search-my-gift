@@ -11,6 +11,9 @@ public class PlayerPrueba : MonoBehaviour
     Rigidbody rig;
     public float speed = 1;
     public float jumpForce = 1;
+    public AudioClip damageSound;
+    AudioSource audioSource;
+    
 
 
     // Start is called before the first frame update
@@ -18,6 +21,7 @@ public class PlayerPrueba : MonoBehaviour
     {   
         
         rig = GetComponent<Rigidbody>();
+        audioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -45,17 +49,24 @@ public class PlayerPrueba : MonoBehaviour
     {   
         Health = Health - 1;
         if (Health == 0) Destroy(gameObject);
+        audioSource.clip = damageSound;
+        audioSource.Play();
     }
     public void HitSpider()
     {
         Health = Health - 3;
         if (Health == 0) Destroy(gameObject);
-       
+        audioSource.clip = damageSound;
+        audioSource.Play();
+
+
     }
     public void HitMonster()
     {
         Health = Health - 1;
         if (Health == 0) Destroy(gameObject);
+        audioSource.clip = damageSound;
+        audioSource.Play();
 
     }
     
@@ -88,7 +99,7 @@ public class PlayerPrueba : MonoBehaviour
             if (box.getID() == (int)BoxID.HEALT)
             {
                 Health += res;
-               
+              
             }
             Destroy(other.gameObject);
         }
