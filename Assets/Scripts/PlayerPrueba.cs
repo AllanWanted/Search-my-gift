@@ -5,8 +5,8 @@ using UnityEngine.UI;
 
 public class PlayerPrueba : MonoBehaviour
 {
-    public float gunSpeed = 1;
-    public GameObject SnowBall;
+ 
+    
     public float Health = 100f;
     Rigidbody rig;
     public float speed = 1;
@@ -29,7 +29,7 @@ public class PlayerPrueba : MonoBehaviour
     {
          if (Input.GetMouseButtonDown(0))
         {
-            Shoot();
+            
         }
         
         float vertical = Input.GetAxis("Vertical");
@@ -70,14 +70,7 @@ public class PlayerPrueba : MonoBehaviour
 
     }
     
-    void Shoot()
-    {   
-        GameObject newSnowball = Instantiate(SnowBall, transform.position + transform.forward, new Quaternion(0, 0, 0, 0));
-        Rigidbody snowballRig = newSnowball.transform.GetComponent<Rigidbody>();
-        snowballRig.velocity = transform.forward * gunSpeed;
-
-        Destroy(newSnowball, 5);
-    }
+   
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.CompareTag("Spider"))
