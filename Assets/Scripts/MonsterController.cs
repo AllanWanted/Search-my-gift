@@ -8,11 +8,14 @@ public class MonsterController : MonoBehaviour
     public float speed;
 
     Rigidbody rb;
+    public AudioClip damageSound;
+    AudioSource audioSource;
 
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+        audioSource = GetComponent<AudioSource>();
 
     }
 
@@ -33,7 +36,8 @@ public class MonsterController : MonoBehaviour
     {
         if(collision.collider.gameObject.tag == "Sword")
         {
-            
+            audioSource.clip = damageSound;
+            audioSource.Play();
             Destroy(gameObject);
         }
     }
