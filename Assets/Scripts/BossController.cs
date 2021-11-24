@@ -14,6 +14,8 @@ public class BossController : MonoBehaviour
     State actualState;
     Animator anim;
     public float speed = 1;
+    public AudioClip clownLaugh;
+    AudioSource audioSource;
 
 
 
@@ -24,6 +26,7 @@ public class BossController : MonoBehaviour
         agent = GetComponent<NavMeshAgent>();
         anim = GetComponent<Animator>();
         actualState = new Idle(gameObject, agent, player, anim);
+        audioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -35,6 +38,8 @@ public class BossController : MonoBehaviour
     {
         HealthBoss = HealthBoss - 1;
         if (HealthBoss == 0) Destroy(gameObject);
+        audioSource.clip = clownLaugh;
+        audioSource.Play();
     }
     private void OnCollisionEnter(Collision collision)
     {

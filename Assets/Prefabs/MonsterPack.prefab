@@ -211,8 +211,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dca77cd3af220de4cb167a25bd91c240, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  coneLength: 10
-  coneWidth: 1
+  coneLength: 20
+  coneWidth: 5
 --- !u!54 &2566032884623169298
 Rigidbody:
   m_ObjectHideFlags: 0

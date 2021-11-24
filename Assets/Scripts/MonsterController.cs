@@ -13,6 +13,7 @@ public class MonsterController : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+
     }
 
     // Update is called once per frame
@@ -28,6 +29,14 @@ public class MonsterController : MonoBehaviour
         transform.LookAt(target);
         rb.velocity = transform.forward * speed + Vector3.down * rb.velocity.y;
     }
-    
+    private void OnCollisionEnter(Collision collision)
+    {
+        if(collision.collider.gameObject.tag == "Sword")
+        {
+            
+            Destroy(gameObject);
+        }
+    }
+
 
 }
