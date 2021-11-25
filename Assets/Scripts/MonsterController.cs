@@ -38,7 +38,7 @@ public class MonsterController : MonoBehaviour
         {
             audioSource.clip = damageSound;
             audioSource.Play();
-            Destroy(gameObject);
+            Destroy(gameObject, 2);
         }
     }
 
