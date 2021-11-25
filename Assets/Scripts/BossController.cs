@@ -41,9 +41,12 @@ public class BossController : MonoBehaviour
         audioSource.clip = clownLaugh;
         audioSource.Play();
     }
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider other)
     {
-        
+        if (other.tag.Equals("Sword"))
+        {
+            Hit();
+        }
     }
 
 }

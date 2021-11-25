@@ -137,22 +137,27 @@ public class Perseguir : State
     public class Attack : State
     {
         float wakeUpDistance = 10;
-        Collider col;
+        Transform col;
+        Transform col2;
 
         public Attack(GameObject _npc, NavMeshAgent _agent, Transform _player, Animator _anim)
                     : base(_npc, _agent, _player, _anim)
         {
             name = STATE.ATTACK; // Set name of current state.
             Debug.Log("atacando");
-            npc.gameObject.GetComponent<Collider>();
-        }
+            col2 =  _npc.transform.GetChild(0);
+            col = _npc.transform.GetChild(1);
+    
+    }
 
         public override void Enter()
         {
             
             base.Enter(); // Sets stage to UPDATE.
             anim.SetBool("Atacando", true);
-            col.enabled = true;
+            col.gameObject.SetActive(true);
+            col2.gameObject.SetActive(true);
+            
 
     }
 
@@ -172,9 +177,10 @@ public class Perseguir : State
 
         public override void Exit()
         {
-           
+
             anim.SetBool("Atacando", false);
-            col.enabled = false;
+            col.gameObject.SetActive(false);
+            col2.gameObject.SetActive(false);
             base.Exit();
            
 
