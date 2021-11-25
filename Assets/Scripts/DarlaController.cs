@@ -52,6 +52,7 @@ public class DarlaController : MonoBehaviour
 
         rig.velocity = transform.forward * vertical * speed + transform.right * horizontal * speed + new Vector3(0, rig.velocity.y, 0);
 
+         
         if (Input.GetKeyDown(KeyCode.Space))
         {
             rig.velocity = new Vector3(rig.velocity.x, rig.velocity.y + jumpForce, rig.velocity.z);
@@ -61,13 +62,13 @@ public class DarlaController : MonoBehaviour
            // move vector 
            
             //animation    
-            bool has_H_Input = !Mathf.Approximately(m_Horizontal, 0);
-            bool has_V_Input = !Mathf.Approximately(m_Vertical, 0);
+            bool has_H_Input = !Mathf.Approximately(horizontal, 0);
+            bool has_V_Input = !Mathf.Approximately(vertical, 0);
 
             if (!stopMoverment) moving = has_H_Input || has_V_Input;
             else moving = false;
 
-            float inputSpeed = Mathf.Clamp01( Mathf.Abs(m_Horizontal) + Mathf.Abs(m_Vertical));
+            float inputSpeed = Mathf.Clamp01( Mathf.Abs(horizontal) + Mathf.Abs(vertical));
 
             m_Animator.SetBool(Const.Moving, moving);
             m_Animator.SetFloat(Const.Speed, inputSpeed);

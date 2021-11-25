@@ -132,7 +132,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1265177029828767835, guid: a41ab576c3b016540aed7505ecaf832f, type: 3}
       propertyPath: m_UseGravity
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1265177029828767835, guid: a41ab576c3b016540aed7505ecaf832f, type: 3}
       propertyPath: m_Constraints
@@ -141,6 +141,10 @@ PrefabInstance:
     - target: {fileID: 1265177029828767836, guid: a41ab576c3b016540aed7505ecaf832f, type: 3}
       propertyPath: m_Enabled
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1265177029828767838, guid: a41ab576c3b016540aed7505ecaf832f, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1586523481853375397, guid: a41ab576c3b016540aed7505ecaf832f, type: 3}
       propertyPath: m_RootOrder
@@ -189,6 +193,14 @@ PrefabInstance:
     - target: {fileID: 2112089406245431583, guid: a41ab576c3b016540aed7505ecaf832f, type: 3}
       propertyPath: m_Name
       value: Kiki-v2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2112089406245431583, guid: a41ab576c3b016540aed7505ecaf832f, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4675961715686533599, guid: a41ab576c3b016540aed7505ecaf832f, type: 3}
+      propertyPath: m_ApplyRootMotion
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 1265177029828767836, guid: a41ab576c3b016540aed7505ecaf832f, type: 3}
