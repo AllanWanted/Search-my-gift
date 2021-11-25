@@ -8,6 +8,7 @@ TagManager:
   - Spider
   - Monster
   - Arms
+  - Sword
   layers:
   - Default
   - TransparentFX
