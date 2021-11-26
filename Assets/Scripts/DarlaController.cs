@@ -12,8 +12,11 @@ public class DarlaController : MonoBehaviour
     public AudioClip damageSound;
     AudioSource audioSource;
 
+    public Transform camTrans;
+    public float mouseSensitivity;
     
-    
+
+
 
     [Header("Player Setting")]
         public float turnSpeed = 10f;
@@ -45,6 +48,9 @@ public class DarlaController : MonoBehaviour
 
         float vertical = Input.GetAxis("Vertical");
         float horizontal = Input.GetAxis("Horizontal");
+
+        Vector2 mouseInput = new Vector2(Input.GetAxisRaw("Mouse X"), Input.GetAxisRaw("Mouse Y"));
+        transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles + new Vector3(0f, -mouseInput.x, 0f));
 
         rig.velocity = transform.forward * vertical * speed + transform.right * horizontal * speed + new Vector3(0, rig.velocity.y, 0);
       
