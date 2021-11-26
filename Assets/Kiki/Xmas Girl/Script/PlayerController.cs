@@ -31,7 +31,7 @@ namespace SD
         {
             m_Rigidbody = GetComponent<Rigidbody>();
             m_Animator = GetComponent<Animator>();     
-            camTrans = Camera.main.transform;     
+                
         }
       
 

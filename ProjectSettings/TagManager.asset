@@ -9,6 +9,8 @@ TagManager:
   - Monster
   - Arms
   - Sword
+  - boss
+  - Cat
   layers:
   - Default
   - TransparentFX

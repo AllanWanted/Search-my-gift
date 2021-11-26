@@ -43,7 +43,11 @@ public class BossController : MonoBehaviour
     }
     private void OnCollisionEnter(Collision collision)
     {
-        
+        if (collision.collider.gameObject.tag == "Sword")
+        {
+            Hit();
+        }
+
     }
 
 }

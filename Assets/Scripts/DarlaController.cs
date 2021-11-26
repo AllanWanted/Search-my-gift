@@ -12,47 +12,49 @@ public class DarlaController : MonoBehaviour
     public float jumpForce = 1;
     public AudioClip damageSound;
     AudioSource audioSource;
- 
+
+    public Transform camTrans;
+    public float mouseSensitivity;
+    
+
+
+
     [Header("Player Setting")]
-         public float turnSpeed = 10f;
+        public float turnSpeed = 10f;
         public float runSpeed = 3f;  
         public bool stopMoverment = false;
         public bool moving { get; set; }
+
         
-        float m_Horizontal, m_Vertical;
-        private Vector3 m_MoveVector;
-         
+
     [HideInInspector]
         public Animator m_Animator;
-        private Quaternion m_Rotation = Quaternion.identity;
-        private Transform camTrans;
-        private Vector3 camForward;
-
-        private Vector3 offset;  
+         
 
     // Start is called before the first frame update
     void Start()
     {   
-        
+      
         rig = GetComponent<Rigidbody>();
         audioSource= GetComponent<AudioSource>();
         m_Animator = GetComponent<Animator>();     
-        camTrans = Camera.main.transform;  
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-         if (Input.GetMouseButtonDown(0))
-        {
-          
-        }
         
+      
+
         float vertical = Input.GetAxis("Vertical");
         float horizontal = Input.GetAxis("Horizontal");
 
-        rig.velocity = transform.forward * vertical * speed + transform.right * horizontal * speed + new Vector3(0, rig.velocity.y, 0);
+        Vector2 mouseInput = new Vector2(Input.GetAxisRaw("Mouse X"), Input.GetAxisRaw("Mouse Y"));
+        transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles + new Vector3(0f, -mouseInput.x, 0f));
 
+        rig.velocity = transform.forward * vertical * speed + transform.right * horizontal * speed + new Vector3(0, rig.velocity.y, 0);
+      
          
         if (Input.GetKeyDown(KeyCode.Space))
         {
@@ -73,20 +75,21 @@ public class DarlaController : MonoBehaviour
 
             m_Animator.SetBool(Const.Moving, moving);
             m_Animator.SetFloat(Const.Speed, inputSpeed);
- 
+            
+           
     }
      
-    public void Hit()
+    public void HitBoss()
     { 
-        Health=Health -1;
-        if (Health == 0) Destroy( gameObject);
+        Health=Health -5;
+        if (Health == 0) Destroy(gameObject);
         audioSource.clip= damageSound;
         audioSource.Play();
     }
     public void HitSpider()
     { 
         Health=Health -3;
-        if (Health == 0) Destroy( gameObject);
+        if (Health == 0) Destroy(gameObject);
         audioSource.clip= damageSound;
         audioSource.Play();
         SceneManager.LoadScene("Perder");
@@ -95,10 +98,11 @@ public class DarlaController : MonoBehaviour
      public void HitMonster()
     { 
         Health=Health -3;
-        if (Health == 0) Destroy( gameObject);
+        if (Health == 0) Destroy(gameObject);
         audioSource.clip= damageSound;
         audioSource.Play();
     }
+  
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.CompareTag("Spider"))
@@ -110,6 +114,7 @@ public class DarlaController : MonoBehaviour
             HitMonster();
     
         }
+       
     }
     void OnTriggerEnter(Collider other)
     {
@@ -124,7 +129,15 @@ public class DarlaController : MonoBehaviour
             }
             Destroy(other.gameObject);
         }
+        if (other.tag.Equals("boss"))
+        {
+            HitBoss();
+        }
+        
+
+
 
 
     }
+    
 }

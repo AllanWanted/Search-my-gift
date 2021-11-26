@@ -40,6 +40,7 @@ public class MonsterController : MonoBehaviour
             audioSource.Play();
             Destroy(gameObject, 2);
         }
+        
     }
 
 
