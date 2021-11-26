@@ -1395,6 +1395,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5638677933591201314}
   - component: {fileID: 8384548196954986403}
+  - component: {fileID: 8052381511362169513}
   m_Layer: 0
   m_Name: cat
   m_TagString: Untagged
@@ -1431,6 +1432,7 @@ SkinnedMeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -1507,6 +1509,19 @@ SkinnedMeshRenderer:
     m_Center: {x: -6.1118044e-10, y: -0.00023488177, z: 0.0009358324}
     m_Extent: {x: 0.000683247, y: 0.0014767918, z: 0.0010618808}
   m_DirtyAABB: 0
+--- !u!65 &8052381511362169513
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8225399370491780667}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.13664949, y: 0.21237618, z: 0.29535842}
+  m_Center: {x: 0.00000006044097, y: 0.093583226, z: -0.023488192}
 --- !u!1 &8293029102253052031
 GameObject:
   m_ObjectHideFlags: 0

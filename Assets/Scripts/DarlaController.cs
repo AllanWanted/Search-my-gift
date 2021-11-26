@@ -74,7 +74,7 @@ public class DarlaController : MonoBehaviour
      
     public void HitBoss()
     { 
-        Health=Health -1;
+        Health=Health -5;
         if (Health == 0) Destroy(gameObject);
         audioSource.clip= damageSound;
         audioSource.Play();
