@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class DarlaController : MonoBehaviour
 {
@@ -88,6 +89,8 @@ public class DarlaController : MonoBehaviour
         if (Health == 0) Destroy( gameObject);
         audioSource.clip= damageSound;
         audioSource.Play();
+        SceneManager.LoadScene("Perder");
+
     }
      public void HitMonster()
     { 
@@ -105,6 +108,7 @@ public class DarlaController : MonoBehaviour
         else if (collision.gameObject.CompareTag("Monster"))
         {
             HitMonster();
+    
         }
     }
     void OnTriggerEnter(Collider other)
