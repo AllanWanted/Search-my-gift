@@ -34,4 +34,14 @@ public void Jugar() {
    public void Iramenu() {
        SceneManager.LoadScene("Menu principal");
    }
+   public void Teganasteelregalo() {
+   SceneManager.LoadScene("Menu principal");
 }
+
+ public void Salir() {
+       Application.Quit();
+   }
+
+
+
+   
