@@ -82,32 +82,36 @@ public class DarlaController : MonoBehaviour
     public void HitBoss()
     { 
         Health=Health -5;
-        if (Health == 0) Destroy(gameObject);
+        if (Health <= 0) Destroy(gameObject);
         audioSource.clip= damageSound;
         audioSource.Play();
     }
     public void HitSpider()
     { 
         Health=Health -3;
-        if (Health == 0) Destroy(gameObject);
+        if (Health <= 0) Destroy(gameObject);
         audioSource.clip= damageSound;
         audioSource.Play();
-        SceneManager.LoadScene("Perder");
+        
 
     }
      public void HitMonster()
     { 
         Health=Health -3;
-        if (Health == 0) Destroy(gameObject);
+        if (Health <= 0) Destroy(gameObject);
+        SceneManager.LoadScene("Perdio");
         audioSource.clip= damageSound;
         audioSource.Play();
     }
+    
   
+      
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.CompareTag("Spider"))
         {
             HitSpider();
+
         }
         else if (collision.gameObject.CompareTag("Monster"))
         {
