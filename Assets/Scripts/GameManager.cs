@@ -40,7 +40,8 @@ public void Jugar() {
 
  public void Salir() {
        Application.Quit();
-   }
+}
+
 
 
 
