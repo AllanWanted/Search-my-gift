@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class DarlaController : MonoBehaviour
 {
@@ -15,6 +16,9 @@ public class DarlaController : MonoBehaviour
 
     public Transform camTrans;
     public float mouseSensitivity;
+
+    public TextMeshProUGUI VidaText;
+    
     
 
 
@@ -37,8 +41,9 @@ public class DarlaController : MonoBehaviour
       
         rig = GetComponent<Rigidbody>();
         audioSource= GetComponent<AudioSource>();
-        m_Animator = GetComponent<Animator>();     
-        
+        m_Animator = GetComponent<Animator>();
+
+        VidaText.text = "" + Health + "%";        
     }
 
     // Update is called once per frame
@@ -75,7 +80,10 @@ public class DarlaController : MonoBehaviour
 
             m_Animator.SetBool(Const.Moving, moving);
             m_Animator.SetFloat(Const.Speed, inputSpeed);
-            
+
+        VidaText.text = "" + Health + "%";
+
+        
            
     }
      
@@ -88,7 +96,7 @@ public class DarlaController : MonoBehaviour
     }
     public void HitSpider()
     { 
-        Health=Health -3;
+        Health=Health -5;
         if (Health <= 0) Destroy(gameObject);
         audioSource.clip= damageSound;
         audioSource.Play();
@@ -99,10 +107,10 @@ public class DarlaController : MonoBehaviour
     { 
         Health=Health -3;
         if (Health <= 0) Destroy(gameObject);
-        SceneManager.LoadScene("Perdio");
         audioSource.clip= damageSound;
         audioSource.Play();
     }
+     
     
   
       
@@ -111,12 +119,18 @@ public class DarlaController : MonoBehaviour
         if (collision.gameObject.CompareTag("Spider"))
         {
             HitSpider();
+            Health -= 5;
+           
 
         }
         else if (collision.gameObject.CompareTag("Monster"))
         {
             HitMonster();
     
+        }
+        else if (collision.gameObject.CompareTag("Cat"))
+        {
+            SceneManager.LoadScene("Ganar");
         }
        
     }

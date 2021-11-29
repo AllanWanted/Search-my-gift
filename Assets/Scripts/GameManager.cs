@@ -19,28 +19,32 @@ public class GameManager : MonoBehaviour
         
     }
 
-public void Jugar() {
+    public void Jugar() 
+    {
     SceneManager.LoadScene("Allan");
-}
+    }
 
-    public void Volverajugar() {
+    public void Volverajugar() 
+    {
     SceneManager.LoadScene("Allan");
-   }
+    }
 
-   public void Salir() {
+   public void Salir() 
+    {
        Application.Quit();
-   }
+    }
 
-   public void Iramenu() {
+   public void Iramenu() 
+    {
        SceneManager.LoadScene("Menu principal");
-   }
-   public void Teganasteelregalo() {
-   SceneManager.LoadScene("Menu principal");
+    }
+    public void Teganasteelregalo()
+    {
+        SceneManager.LoadScene("Menu principal");
+    }
 }
 
- public void Salir() {
-       Application.Quit();
-}
+
 
 
 

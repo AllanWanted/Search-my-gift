@@ -5,7 +5,7 @@ using UnityEngine.AI;
 
 public class BossController : MonoBehaviour
 {
-    public float HealthBoss = 100f;
+    public float HealthBoss = 300f;
    
 
     //aca se crea todo el sistema de navmesh y maquina de estado
@@ -36,7 +36,7 @@ public class BossController : MonoBehaviour
     }
     public void Hit()
     {
-        HealthBoss = HealthBoss - 1;
+        HealthBoss = HealthBoss - 10;
         if (HealthBoss == 0) Destroy(gameObject);
         audioSource.clip = clownLaugh;
         audioSource.Play();
