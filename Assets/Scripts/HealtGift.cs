@@ -6,7 +6,7 @@ public class HealtGift : MonoBehaviour, IBox
 {
     public Transform healgift;
     public float rotationSpeed = 180f;
-    public int healt = 5;
+    public int healt = 10;
 
     int IBox.getID()
     {
