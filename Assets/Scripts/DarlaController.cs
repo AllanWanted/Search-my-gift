@@ -129,9 +129,6 @@ public class DarlaController : MonoBehaviour
         if (collision.gameObject.CompareTag("Spider"))
         {
             HitSpider();
-            
-           
-
         }
         else if (collision.gameObject.CompareTag("Monster"))
         {
