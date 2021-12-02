@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
+
 public class BossController : MonoBehaviour
 {
     public float HealthBoss = 300f;
@@ -17,6 +18,9 @@ public class BossController : MonoBehaviour
     public AudioClip clownLaugh;
     AudioSource audioSource;
 
+    
+
+
 
 
     // Start is called before the first frame update
@@ -27,12 +31,15 @@ public class BossController : MonoBehaviour
         anim = GetComponent<Animator>();
         actualState = new Idle(gameObject, agent, player, anim);
         audioSource = GetComponent<AudioSource>();
+      
     }
 
     // Update is called once per frame
     void Update()
     {
         actualState = actualState.Process();
+
+       
     }
     public void Hit()
     {

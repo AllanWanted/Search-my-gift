@@ -15057,7 +15057,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 100%
+  m_text: 'Darla''s Health 100%
+
+'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -29995,6 +29997,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5058765032185774558, guid: a41ab576c3b016540aed7505ecaf832f, type: 3}
+      propertyPath: speed
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 5058765032185774558, guid: a41ab576c3b016540aed7505ecaf832f, type: 3}
       propertyPath: VidaText
       value: 
       objectReference: {fileID: 764270295}
@@ -30040,7 +30046,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5175170241629745549, guid: a41ab576c3b016540aed7505ecaf832f, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 520
+      value: -60.5
       objectReference: {fileID: 0}
     - target: {fileID: 5175170241629745549, guid: a41ab576c3b016540aed7505ecaf832f, type: 3}
       propertyPath: m_LocalPosition.y
@@ -30048,7 +30054,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5175170241629745549, guid: a41ab576c3b016540aed7505ecaf832f, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 52.6
+      value: 39.14
       objectReference: {fileID: 0}
     - target: {fileID: 5175170241629745549, guid: a41ab576c3b016540aed7505ecaf832f, type: 3}
       propertyPath: m_LocalRotation.w
