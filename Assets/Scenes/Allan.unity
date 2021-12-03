@@ -17612,7 +17612,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   healgift: {fileID: 904034734}
   rotationSpeed: 180
-  healt: 5
+  healt: 10
 --- !u!65 &904034731
 BoxCollider:
   m_ObjectHideFlags: 0
